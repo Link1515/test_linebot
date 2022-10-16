@@ -6,7 +6,9 @@ import axios from 'axios'
 //   console.log($('#go .col-lg-3.col-md-6').eq(0).find('h4').text())
 // })
 
-axios.get(encodeURI('https://jsonplaceholder.typicode.com/posts/1')).then(({ data }) => {
+axios.defaults.timeout = 10000
+
+axios.get(encodeURI('https://iplay.sa.gov.tw/api/GymSearchAllList?$format=application/json;odata.metadata=none&Keyword=排球場')).then(({ data }) => {
   console.log(data)
 }).catch(err => {
   console.log(err)
