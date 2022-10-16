@@ -8,4 +8,6 @@ import axios from 'axios'
 
 axios.get(encodeURI('https://iplay.sa.gov.tw/api/GymSearchAllList?$format=application/json;odata.metadata=none&Keyword=排球場')).then(({ data }) => {
   console.log(data)
+}).catch(err => {
+  console.log(err)
 })
