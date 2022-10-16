@@ -1,14 +1,14 @@
 import express from 'express'
 import axios from 'axios'
+import data from './data.js'
 
 const app = express()
 
 axios.defaults.timeout = 40000
 
-app.get('/ajax', async (req, res) => {
+app.get('/ajax', (req, res) => {
   try {
-    const { data } = await axios.get(encodeURI('https://iplay.sa.gov.tw/api/GymSearchAllList?$format=application/json;odata.metadata=none&Keyword=排球場'))
-    return res.send({ data: data.length })
+    return res.send({ data })
   } catch (error) {
     console.log(error)
     return res.send('error')
